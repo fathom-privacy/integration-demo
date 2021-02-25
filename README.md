@@ -1,9 +1,12 @@
 ## Fathom Integration Demo
 
+This is a demo app for integrating with the Fathom SDK
+
 The application is live at https://demo.fathomprivacy.com
 
-## `This is a demo app for integrating with the Fathom SDK`
+## The fathom-js sdk
 
+Is available at https://www.npmjs.com/package/fathom-privacy
 
 ### `yarn start`
 
