@@ -107,9 +107,9 @@ class App extends React.Component {
               <p>{this.state.status}</p>
             </div>
             
-            <div>
+            <div className="Status-box">
               <p><b>Your results:</b></p>
-              <textarea rows="5" cols="80" id="Results" />
+              <textarea id="Results" />
             </div>
           </div>
 
