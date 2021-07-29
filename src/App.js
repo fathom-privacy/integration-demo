@@ -63,8 +63,15 @@ class App extends React.Component {
   updateStatus(lookup, message){
     console.log(message)
     if (message.status === "in progress" && !this.state.inProgress) {
-      this.setState({status: "Data pull in progress. Should take between 20-40 minutes.", inProgress: true})
+      this.setState({status: "Data pull in progress. Should take between 20-30 minutes.", inProgress: true})
     } else if (message.status.slice(-1) === "%") {
+      //when pull is in progress, set the domain params to match current pull
+      var url = new URL(window.location.href);
+      if(url.searchParams.get('session_id') !== lookup.getSessionId()) {
+        url.searchParams.set('session_id', lookup.getSessionId());
+        window.location.replace(url)
+      }
+
       this.setState({status:message.status})
     } else if (message.status === "complete") {
       //when the status is 'complete', lookup's getLIData() function will return the data for that user's lookup 
